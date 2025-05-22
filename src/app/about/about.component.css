@@ -4,7 +4,7 @@
   padding: 2rem;
 }
 
-.section {
+/* .section {
   margin-bottom: 3rem;
 }
 
@@ -13,6 +13,77 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+} */
+
+.section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #1a1a1a; /* dark base to stand out from black background */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.05);
+  color: #e0e0e0;
+  transition: box-shadow 0.3s ease;
+}
+
+.section:hover {
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.15);
+}
+
+.section h2 {
+  font-size: 1.75rem;
+  color: #00d4ff; /* bright accent color */
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+/* Achievements List */
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Individual Achievement Item */
+.achievement-item {
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  background-color: #1e1e1e; /* Dark card background */
+  color: #cccccc;
+  border: 1px solid #2c2c2c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+  background-color: #292929;
+  border-color: #6c63ff;
+}
+
+.achievement-item.selected {
+  background-color: #8d00f8; /* Deep blue selection */
+  color: #ffffff;
+  border: 1px solid #00e0ff;
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.25);
+}
+
+.achievement-year {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.achievement-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: inherit;
+}
+
+.achievement-content p {
+  margin-top: 0.5rem;
+  color: #d3d3d3;
+  font-size: 0.95rem;
 }
 
 .btn-outline {
@@ -26,12 +97,22 @@
   color: white;
 }
 
-.bio-section {
+/* .bio-section {
   background-color: #f8f9fa;
   padding: 1.5rem;
   border-radius: 8px;
   border-left: 4px solid #007bff;
+} */
+
+.bio-section {
+  background-color: #1f1f2e; /* Dark, elegant shade with a hint of purple */
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #a855f7; /* Soft purple highlight */
+  color: #f1f1f1; /* Light text for readability */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
 
 .interests-grid {
   display: grid;
@@ -47,18 +128,48 @@
   transition: transform 0.3s ease;
 }
 
+/* .interest-card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+} */
+/* 
 .interest-card:hover {
   transform: translateY(-5px);
-  background-color: #e3f2fd;       /* Light blue */
-  border: 2px solid #007bff;       /* Bootstrap primary blue */
+  background-color: #e3f2fd;      
+  border: 2px solid #007bff;       
+} */
+
+/* .interest-card.highlight {
+  background-color: #e3f2fd;
+  border: 2px solid #007bff;
+} */
+
+.interest-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #1f1f2e;         /* Dark card background */
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+  color: #f1f1f1;                    /* Light text */
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid transparent;     /* Transition-friendly */
+}
+
+.interest-card:hover {
+  transform: translateY(-6px);
+  background-color: #2a1a40;         /* Deeper purple on hover */
+  border-color: #a855f7;             /* Purple border on hover */
 }
 
 .interest-card.highlight {
-  background-color: #e3f2fd;
-  border: 2px solid #007bff;
+  background-color: #2a1a40;
+  border-color: #a855f7;
 }
 
-.achievements-list {
+/* .achievements-list {
   space-y: 1rem;
 }
 
@@ -90,4 +201,4 @@
 
 .achievement-content h3 {
   margin: 0 0 0.5rem 0;
-}
+} */

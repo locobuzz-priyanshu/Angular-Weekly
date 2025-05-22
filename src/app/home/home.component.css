@@ -1,54 +1,220 @@
+/* Dark Theme Variables (Optional but recommended for consistency) */
+:root {
+  --dark-bg: #1a1a2e;
+  --dark-card-bg: #21213b;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+  --text-light: #e0e0e0;
+  --text-lighter: #ffffff;
+  --button-bg: #bb86fc;
+  --button-hover-bg: #a66dfc;
+  --button-text: #1a1a2e;
+}
+
+body {
+  background-color: var(--dark-bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-light);
+}
+
 .hero-section {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   min-height: 60vh;
-  text-align: center;
-  background: linear-gradient(135deg, #9d00ff 0%, #40136c 100%);
-  color: white;
-  border-radius: 10px;
-  margin: 2rem 0;
+  text-align: left;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #2a0a52 30%, #15052b 70%, var(--dark-bg) 100%);
+  color: var(--text-light);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1100px;
+  padding: 3rem;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(187, 134, 252, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(187, 134, 252, 0.05);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 250px;
+  height: 250px;
+  background-color: rgba(3, 218, 198, 0.05);
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  flex: 2;
+  padding-right: 3rem;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+  font-size: 3.8rem;
+  margin-bottom: 0.7rem;
+  color: var(--text-lighter);
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 .hero-content h2 {
-  font-size: 1.5rem;
-  opacity: 0.9;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  opacity: 0.8;
+  margin-bottom: 1.2rem;
+  color: var(--primary-color);
+  font-weight: 400;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  color: var(--text-light);
 }
 
 .btn {
-  padding: 12px 24px;
+  padding: 14px 28px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .btn-primary {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  box-shadow: 0 4px 15px rgba(187, 134, 252, 0.3);
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+  background-color: var(--button-hover-bg);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(187, 134, 252, 0.4);
 }
 
 .details-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-top: 2rem;
-  backdrop-filter: blur(10px);
+  background-color: var(--dark-card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 3rem;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: var(--text-light);
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.details-card h3 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.details-card p {
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+  color: var(--text-light);
+}
+
+.details-card p strong {
+  color: var(--text-lighter);
+}
+
+/* --- UPDATED CSS FOR HERO IMAGE TO CROP MORE OF THE FACE --- */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image img {
+  display: block;
+  width: 300px; /* Fixed width of the circular frame */
+  height: 300px; /* Fixed height (must match width for a perfect circle) */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* This is key: it tells the image to cover the entire 300x300 frame, cropping any excess */
+  /* Adjust object-position to fine-tune which part of the image is visible within the circle. */
+  /* 'center' (default) tries to center the image. 'top' will push the top edge of the image to the top of the circle. */
+  /* You can also use percentages, e.g., '50% 20%' means center horizontally, 20% from the top vertically. */
+  object-position: center top; /* Try 'center top' if you want to emphasize the top of the head, or '50% 20%' */
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 0 5px rgba(187, 134, 252, 0.2);
+  transition: transform 0.3s ease-in-out;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    padding-bottom: 2rem;
+    flex: none;
+    width: 100%;
+  }
+
+  .hero-image {
+    padding-top: 1.5rem;
+    flex: none;
+    width: 100%;
+  }
+
+  .hero-image img {
+    width: 200px; /* Adjust size for mobile */
+    height: 200px; /* Adjust size for mobile */
+    max-width: 100%; /* Ensure it scales down if needed */
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .details-card {
+    width: 90%;
+  }
 }

@@ -22,7 +22,7 @@ export class SkillsComponent {
   softSkills = ['Problem Solving', 'Attention to details','Communication', 'Team Work', 'Time Management'];
   
   selectedCategory = 'All';
-  categories = ['All', 'Frontend', 'Backend', 'Database', 'Dataware house','DataLakes'];
+  categories = ['All', 'Frontend', 'Backend', 'Database', 'DataLake'];
 
   get filteredSkills() {
     if (this.selectedCategory === 'All') {

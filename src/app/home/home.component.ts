@@ -14,9 +14,9 @@ export class HomeComponent {
   showDetails = false;
   
   personalInfo = {
-    location: 'New York, USA',
-    experience: '2 years',
-    education: 'Computer Science Degree'
+    location: 'Mumbai, India',
+    experience: '1 years',
+    education: 'Computer Science Engineering'
   };
 
   toggleDetails() {

@@ -10,7 +10,7 @@
       <div class="contact-methods">
         <div *ngFor="let method of contactMethods; let i = index" 
              class="contact-method"
-             [class.highlight]="i % 2 === 0">
+             [ngClass]="'highlight'">
           <span class="contact-icon">{{method.icon}}</span>
           <div class="contact-details">
             <h3>{{method.name}}</h3>

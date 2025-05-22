@@ -15,9 +15,9 @@ export class AboutComponent {
   interests = ['WebAPI Application', 'Microservices', 'Frontend', 'System Designs'];
   
   achievements = [
-    { year: 2023, title: 'Dotnet Angular Full Stack Intern', description: 'Worked and learned Backend Development tools' },
-    { year: 2023, title: 'Software Engineer Backend', description: 'Worked on larger system, created system designs and implemented high scalable applications' },
-    { year: 2024, title: 'Software Engineer - Full Stack', description: 'In a transition of developing high scalable application with frontend, webapi, services and database :)  ' }
+    { year: 2024, title: 'Dotnet Angular Full Stack Intern', description: 'Worked and learned Backend Development tools' },
+    { year: 2024, title: 'Software Engineer Backend', description: 'Worked on larger system, created system designs and implemented high scalable applications' },
+    { year: 2025, title: 'Software Engineer - Full Stack', description: 'In a transition of developing high scalable application with frontend, webapi, services and database :)  ' }
   ];
 
   showBio = true;
