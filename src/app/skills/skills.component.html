@@ -1,0 +1,43 @@
+<div class="skills-container">
+  <h1>My Skills</h1>
+
+  <div class="section">
+    <h2>Technical Skills</h2>
+    
+    <div class="category-filter">
+      <button *ngFor="let category of categories"
+              class="btn filter-btn"
+              [class.active]="selectedCategory === category"
+              (click)="selectedCategory = category">
+        {{category}}
+      </button>
+    </div>
+
+    <div class="skills-grid">
+      <div *ngFor="let skill of filteredSkills" class="skill-card">
+        <div class="skill-header">
+          <h3>{{skill.name}}</h3>
+          <span class="skill-level">{{skill.level}}%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" 
+               [style.width.%]="skill.level"
+               [style.background-color]="getSkillColor(skill.level)">
+          </div>
+        </div>
+        <small class="skill-category">{{skill.category}}</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Soft Skills</h2>
+    <div class="soft-skills">
+      <div *ngFor="let skill of softSkills; let isEven = even" 
+           class="soft-skill-item"
+           [class.even]="isEven">
+        <span>{{skill}}</span>
+      </div>
+    </div>
+  </div>
+</div>

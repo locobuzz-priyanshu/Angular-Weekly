@@ -1,0 +1,78 @@
+<div class="contact-container">
+  <h1>Contact Me</h1>
+
+  <div class="contact-sections">
+    <!-- Contact Information -->
+    <div class="contact-info-section">
+      <h2>Get In Touch</h2>
+      <p>I'd love to hear from you! Feel free to reach out through any of these channels:</p>
+      
+      <div class="contact-methods">
+        <div *ngFor="let method of contactMethods; let i = index" 
+             class="contact-method"
+             [class.highlight]="i % 2 === 0">
+          <span class="contact-icon">{{method.icon}}</span>
+          <div class="contact-details">
+            <h3>{{method.name}}</h3>
+            <p>{{method.value}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-section">
+      <div class="form-header">
+        <h2>Send Me a Message</h2>
+        <button class="btn btn-outline" (click)="showForm = !showForm">
+          {{showForm ? 'Hide' : 'Show'}} Form
+        </button>
+      </div>
+
+      <div *ngIf="showForm && !submitted" class="contact-form">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input 
+              type="text" 
+              id="name" 
+              [(ngModel)]="formData.name" 
+              name="name"
+              placeholder="Your full name"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input 
+              type="email" 
+              id="email" 
+              [(ngModel)]="formData.email" 
+              name="email"
+              placeholder="your.email@example.com"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea 
+              id="message" 
+              [(ngModel)]="formData.message" 
+              name="message"
+              rows="5"
+              placeholder="Your message here..."
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+
+      <div *ngIf="submitted" class="success-message">
+        <h3>Thank you, {{formData.name}}! 🎉</h3>
+        <p>Your message has been received. I'll get back to you soon!</p>
+        <button class="btn btn-outline" (click)="resetForm()">Send Another Message</button>
+      </div>
+    </div>
+  </div>
+</div>

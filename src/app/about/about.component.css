@@ -1,0 +1,93 @@
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.btn-outline:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.bio-section {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.interest-card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-5px);
+  background-color: #e3f2fd;       /* Light blue */
+  border: 2px solid #007bff;       /* Bootstrap primary blue */
+}
+
+.interest-card.highlight {
+  background-color: #e3f2fd;
+  border: 2px solid #007bff;
+}
+
+.achievements-list {
+  space-y: 1rem;
+}
+
+.achievement-item {
+  display: flex;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.achievement-item:hover {
+  background-color: #e9ecef;
+}
+
+.achievement-item.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.achievement-year {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 1.5rem;
+  min-width: 60px;
+}
+
+.achievement-content h3 {
+  margin: 0 0 0.5rem 0;
+}

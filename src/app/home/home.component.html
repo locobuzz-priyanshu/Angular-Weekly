@@ -1,0 +1,18 @@
+<div class="hero-section">
+  <div class="hero-content">
+    <h1>Hi, I'm {{name}}</h1>
+    <h2>{{title}}</h2>
+    <p>{{welcomeMessage}}</p>
+    
+    <button class="btn btn-primary" (click)="toggleDetails()">
+      {{showDetails ? 'Hide' : 'Show'}} Details
+    </button>
+    
+    <div *ngIf="showDetails" class="details-card">
+      <h3>Quick Info</h3>
+      <p><strong>Location:</strong> {{personalInfo.location}}</p>
+      <p><strong>Experience:</strong> {{personalInfo.experience}}</p>
+      <p><strong>Education:</strong> {{personalInfo.education}}</p>
+    </div>
+  </div>
+</div>

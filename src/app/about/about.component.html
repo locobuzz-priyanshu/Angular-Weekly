@@ -1,0 +1,44 @@
+<div class="about-container">
+  <h1>About Me</h1>
+  
+  <div class="section">
+    <div class="section-header">
+      <h2>Biography</h2>
+      <button class="btn btn-outline" (click)="showBio = !showBio">
+        {{showBio ? 'Hide' : 'Show'}} Bio
+      </button>
+    </div>
+    
+    <div *ngIf="showBio" class="bio-section">
+      <p>{{bio}}</p>
+    </div>
+  </div>
+
+  <div class="section">
+  <h2>My Interests</h2>
+  <div class="interests-grid">
+    <div *ngFor="let interest of interests" class="interest-card">
+      <h3>{{ interest }}</h3>
+    </div>
+  </div>
+</div>
+
+
+  <div class="section">
+    <h2>Achievements</h2>
+    <div class="achievements-list">
+      <div *ngFor="let achievement of achievements" 
+           class="achievement-item"
+           (click)="selectAchievement(achievement)"
+           [class.selected]="selectedAchievement === achievement">
+        <div class="achievement-year">{{achievement.year}}</div>
+        <div class="achievement-content">
+          <h3>{{achievement.title}}</h3>
+          <p *ngIf="selectedAchievement === achievement">
+            {{achievement.description}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
