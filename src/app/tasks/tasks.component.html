@@ -1,0 +1,60 @@
+<!-- <app-header></app-header> -->
+<div class="tasks-container">
+    <h1>My Task List</h1>
+    <div class="add-task-form">
+        <h3>Add New Task</h3>
+        <form (ngSubmit)="addTask()">
+            <div class="form-group">
+                <input type="text" [(ngModel)]="newTaskTitle" name="newTaskTitle" placeholder="Enter task title..."
+                    required class="form-input">
+            </div>
+            <div *ngIf="newTaskTitle" class="live-preview">
+                <p><strong>Live Preview:</strong> {{ newTaskTitle }}</p>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!newTaskTitle">
+                Add Task
+            </button>
+        </form>
+    </div>
+    <p>Today is: {{today | date:'fullDate'}}</p>
+
+    <div class="task-stats">
+        <div class="stat">
+            <span class="stat-number">{{tasks.length}}</span>
+            <span class="stat-label">Total Tasks</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">{{getCompletedCount()}}</span>
+            <span class="stat-label">Completed</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">{{getPendingCount()}}</span>
+            <span class="stat-label">Pending</span>
+        </div>
+    </div>
+
+    <div class="tasks-list">
+        <div *ngFor="let task of tasks" class="task-item" [class.completed]="task.completed">
+
+            <div class="task-content">
+                <h3>{{task.title | titlecase}}</h3>
+                <small>Created: {{task.createdDate | date:'short'}}</small>
+            </div>
+
+            <div class="task-actions">
+                <button class="btn btn-sm" [class.btn-success]="!task.completed" [class.btn-secondary]="task.completed"
+                    (click)="toggleTask(task.id)">
+                    {{task.completed ? 'Undo' : 'Complete'}}
+                </button>
+
+                <button class="btn btn-danger btn-sm" (click)="deleteTask(task.id)">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="tasks.length === 0" class="no-tasks">
+        <p>No tasks yet! Add your first task.</p>
+    </div>
+</div>

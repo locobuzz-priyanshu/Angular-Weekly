@@ -1,0 +1,44 @@
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header Navigation */
+nav {
+  width: 100%;
+  background: linear-gradient(to right, #1a0a2a, #3c0f63, #6a0dad); /* smoother dark purple gradient */
+  padding: 1rem 3rem;
+  box-shadow: 0 2px 10px rgba(168, 85, 247, 0.2);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+/* Navigation List */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Links */
+.nav-links li a {
+  color: #e2d9f9;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #ffffff;
+  border-bottom: 2px solid #a855f7;
+}
