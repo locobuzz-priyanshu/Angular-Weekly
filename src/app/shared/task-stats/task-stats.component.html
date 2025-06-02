@@ -1,0 +1,15 @@
+<div class="task-stats">
+    <div class="stat">
+        <!-- <span class="stat-number">{{tasks?.length || 0}}</span> -->
+        <span class="stat-number">{{tasks.length || 0}}</span>
+        <span class="stat-label">Total Tasks</span>
+    </div>
+    <div class="stat">
+        <span class="stat-number">{{getCompletedCount()}}</span>
+        <span class="stat-label">Completed</span>
+    </div>
+    <div class="stat">
+        <span class="stat-number">{{getPendingCount()}}</span>
+        <span class="stat-label">Pending</span>
+    </div>
+</div>

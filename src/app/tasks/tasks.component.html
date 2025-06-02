@@ -18,20 +18,8 @@
     </div>
     <p>Today is: {{today | date:'fullDate'}}</p>
 
-    <div class="task-stats">
-        <div class="stat">
-            <span class="stat-number">{{tasks.length}}</span>
-            <span class="stat-label">Total Tasks</span>
-        </div>
-        <div class="stat">
-            <span class="stat-number">{{getCompletedCount()}}</span>
-            <span class="stat-label">Completed</span>
-        </div>
-        <div class="stat">
-            <span class="stat-number">{{getPendingCount()}}</span>
-            <span class="stat-label">Pending</span>
-        </div>
-    </div>
+    <app-task-stats [tasks]="tasks"></app-task-stats>
+
 
     <div class="tasks-list">
         <div *ngFor="let task of tasks" class="task-item" [class.completed]="task.completed">
